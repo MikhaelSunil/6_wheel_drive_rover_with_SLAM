@@ -1,0 +1,240 @@
+<?xml version="1.0" ?>
+<robot name="mine_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mine_rover_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find mine_rover_description)/urdf/mine_rover.ros2control" />
+<xacro:include filename="$(find mine_rover_description)/urdf/mine_rover.gazebo" />
+
+
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_footprint">
+    </link>
+
+
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.06562492569328053 0.1356303990929501 0.04446792050664675" rpy="0 0 0"/>
+    <mass value="46.27067436610307"/>
+    <inertia ixx="0.668279" iyy="0.836677" izz="0.518403" ixy="0.000296" iyz="-0.015434" ixz="-0.000321"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Blue"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel3_1">
+  <inertial>
+    <origin xyz="2.760043676802715e-07 -0.009999574634039906 3.002998790746503e-07" rpy="0 0 0"/>
+    <mass value="2.083896946942449"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.101876 -0.001556 0.160215" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.101876 -0.001556 0.160215" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel2_1">
+  <inertial>
+    <origin xyz="3.235510231264227e-07 -0.009999574634041426 3.002998790746503e-07" rpy="0 0 0"/>
+    <mass value="2.0838969469424495"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.048333 -0.001556 0.160215" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.048333 -0.001556 0.160215" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel1_1">
+  <inertial>
+    <origin xyz="3.8743416608255643e-07 -0.009999574634043353 1.0221106144792103e-07" rpy="0 0 0"/>
+    <mass value="2.0838969469424495"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.238868 -0.001556 0.156889" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.238868 -0.001556 0.156889" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/rightwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel1_1">
+  <inertial>
+    <origin xyz="1.7407506672229012e-07 0.010000425365956966 8.792094413623275e-09" rpy="0 0 0"/>
+    <mass value="2.0838969469424495"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.238869 -0.271556 0.156889" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.238869 -0.271556 0.156889" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel2_1">
+  <inertial>
+    <origin xyz="-2.042251838474396e-08 0.010000425365958965 -2.0087925123313255e-07" rpy="0 0 0"/>
+    <mass value="2.08389694694245"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.048334 -0.271556 0.160213" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.048334 -0.271556 0.160213" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel3_1">
+  <inertial>
+    <origin xyz="2.2251425907393596e-07 0.010000425365960408 4.3449225789471413e-07" rpy="0 0 0"/>
+    <mass value="2.083896946942451"/>
+    <inertia ixx="0.002271" iyy="0.004402" izz="0.002271" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.101878 -0.271556 0.16022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.101878 -0.271556 0.16022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/leftwheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="2.7600436883212787e-07 4.253659584563252e-07 0.004999999999999893" rpy="0 0 0"/>
+    <mass value="0.06313344596654044"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="8e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065624 -0.138556 -0.345" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.065624 -0.138556 -0.345" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find mine_rover_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="rw3revolute" type="continuous">
+  <origin xyz="-0.101876 0.001556 -0.160215" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightwheel3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rw2revolute" type="continuous">
+  <origin xyz="0.048333 0.001556 -0.160215" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightwheel2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rw1revolute" type="continuous">
+  <origin xyz="0.238868 0.001556 -0.156889" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightwheel1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lw1revolute" type="continuous">
+  <origin xyz="0.238869 0.271556 -0.156889" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftwheel1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lw2revolute" type="continuous">
+  <origin xyz="0.048334 0.271556 -0.160213" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftwheel2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lw3revolute" type="continuous">
+  <origin xyz="-0.101878 0.271556 -0.16022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftwheel3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidarrigid" type="fixed">
+  <origin xyz="0.065624 0.138556 0.345" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+
+
+</robot>
